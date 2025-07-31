@@ -20,7 +20,7 @@
 		zephyr,flash = &flash0;
 		zmk,battery = &fuelgauge;
 		zmk,kscan = &kscan;
-		//zmk,matrix_transform = &mit_transform;
+		zmk,matrix_transform = &layout_ortho_5x12_all1u;
 		zmk,physical-layout-position-map = &layout_ortho_5x12_all1u;
 	};
 
