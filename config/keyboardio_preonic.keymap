@@ -48,6 +48,86 @@
         };
     };
 
+    behaviors {
+        td_mt_esc_caps: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MOD_TAP";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mt LSHFT ESC>, <&kp CAPSLOCK>;
+        };
+
+        bs_dl: bksp_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BKSP_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <0>;
+        };
+
+        mt_t: behavior_mod_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_TAP_HOLD";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        mt_bs_del: mod_tap_bs_del {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_TAP_BS_DEL";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&bs_dl>;
+        };
+
+        shift_caps: shift_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_CAPS";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&kp CAPS>;
+        };
+
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <215>;
+            quick-tap-ms = <195>;
+            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            /*quick_tap_ms = <0>;*/
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <215>;
+            quick-tap-ms = <195>;
+            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        
+    };    
+
     keymap {
         compatible = "zmk,keymap";
 
