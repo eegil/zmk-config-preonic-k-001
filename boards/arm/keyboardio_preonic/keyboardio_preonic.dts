@@ -102,6 +102,7 @@
     position_map {
         compatible = "zmk,physical-layout-position-map";
 		combatible = "zmk,transform";
+		compatible = "zmk,matrix-transform";
 
         layout_ortho_5x12_all1u {
             physical-layout = <&layout_ortho_5x12_all1u>;
