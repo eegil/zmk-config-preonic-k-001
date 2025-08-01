@@ -91,7 +91,7 @@
         a-gpios = <&gpio0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
-        status = "okay";
+        status = "disabled";
     };
 
 
@@ -128,7 +128,9 @@
 		reg = <0x36>;
 	};
 };
-
+&encoder {
+    status = "okay";
+};
 &adc {
 	status = "okay";
 };
