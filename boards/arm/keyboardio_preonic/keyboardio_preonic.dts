@@ -84,7 +84,7 @@
 			, <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			;
 	};
-
+	/*
 	encoder: encoder {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -97,13 +97,8 @@
         sensors = <&encoder>;
         triggers-per-rotation = <20>;
     };
+	*/
 };
-
-	
-
-
-
-
 
 &pinctrl {
        i2c0_default: i2c0_default {

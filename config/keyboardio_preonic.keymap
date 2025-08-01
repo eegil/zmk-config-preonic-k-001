@@ -277,12 +277,13 @@
         };
     };
     
+    /*
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder>;
         triggers-per-rotation = <20>;
     };
-
+    */
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
