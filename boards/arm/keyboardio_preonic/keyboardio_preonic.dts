@@ -130,9 +130,11 @@
 		reg = <0x36>;
 	};
 };
+/*
 &encoder {
     status = "okay";
 };
+*/
 &adc {
 	status = "okay";
 };
